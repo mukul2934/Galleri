@@ -39,6 +39,7 @@
 		1C7123821B8D81E800677551 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C71237C1B8D81E800677551 /* ParseUI.framework */; };
 		1C7123841B8D820100677551 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7123831B8D820100677551 /* Accounts.framework */; };
 		1C7123861B8D820800677551 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7123851B8D820800677551 /* Social.framework */; };
+		1C71238A1B8E703600677551 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7123891B8E703600677551 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		1C71237C1B8D81E800677551 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "Galleri V2/parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
 		1C7123831B8D820100677551 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1C7123851B8D820800677551 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		1C7123881B8E703600677551 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		1C7123891B8E703600677551 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 				1C7122EF1B8CF2F700677551 /* Welcome */,
 				1C7122FC1B8D15CF00677551 /* Login */,
 				1C7123041B8D194100677551 /* SignUp */,
+				1C7123871B8E702900677551 /* Camera View */,
 				1C7122EE1B8CF2D500677551 /* App Delagate */,
 				1C7122D41B8CE87600677551 /* Images.xcassets */,
 				1C7122C71B8CE87600677551 /* Supporting Files */,
@@ -262,6 +266,15 @@
 				1C7123141B8D49F800677551 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C7123871B8E702900677551 /* Camera View */ = {
+			isa = PBXGroup;
+			children = (
+				1C7123881B8E703600677551 /* CameraViewController.h */,
+				1C7123891B8E703600677551 /* CameraViewController.m */,
+			);
+			name = "Camera View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +385,7 @@
 				1C7122FF1B8D15E600677551 /* LoginViewController.m in Sources */,
 				1C7123071B8D195300677551 /* SignUpViewController.m in Sources */,
 				1C7122CD1B8CE87600677551 /* AppDelegate.m in Sources */,
+				1C71238A1B8E703600677551 /* CameraViewController.m in Sources */,
 				1C7122CA1B8CE87600677551 /* main.m in Sources */,
 				1C7122F21B8CF30900677551 /* WelcomeViewController.m in Sources */,
 			);

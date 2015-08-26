@@ -81,12 +81,9 @@
                                 <state key="normal" backgroundImage="goButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoO-Ij-BHe" userLabel="Select Profile Pic">
-                                <rect key="frame" x="129" y="78" width="116" height="109"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="VU2-GO-bWH" eventType="touchUpInside" id="eJ7-eL-1eJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B37-ic-5dJ" userLabel="Username Text Field">
                                 <rect key="frame" x="29" y="309" width="321" height="30"/>
@@ -94,10 +91,29 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snA-SD-GmI" userLabel="Profile Pic Image View">
+                                <rect key="frame" x="132" y="78" width="110" height="110"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoO-Ij-BHe" userLabel="Select Profile Pic">
+                                <rect key="frame" x="129" y="78" width="116" height="109"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectProfilePictureButtonPressed:" destination="VU2-GO-bWH" eventType="touchUpInside" id="Wsp-dd-CR6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loginButton" destination="Abt-r7-0zX" id="5ZS-yq-FQY"/>
+                        <outlet property="passwordTextField" destination="B37-ic-5dJ" id="6J8-xA-8Kn"/>
+                        <outlet property="profileImageView" destination="snA-SD-GmI" id="fGa-JH-zvk"/>
+                        <outlet property="usernameTextField" destination="hbT-eX-2nQ" id="mO6-km-eKP"/>
+                        <segue destination="LIj-Lj-uhP" kind="modal" identifier="signupToCamera" id="QgL-cw-cWm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFP-Z0-hxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,20 +165,125 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="LIj-Lj-uhP" kind="modal" identifier="loginToCamera" id="Bjs-kx-a7V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmV-0v-hfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1089.5" y="51.5"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="w3e-fh-EgZ">
+            <objects>
+                <viewController id="LIj-Lj-uhP" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8T1-g6-xrG"/>
+                        <viewControllerLayoutGuide type="bottom" id="x2h-Pt-8lP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xAj-Xh-Z3T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgX-gU-AnX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXy-HK-yfI" userLabel="Camera">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9Z-Bb-o8x" userLabel="UI">
+                                        <rect key="frame" x="0.0" y="568" width="375" height="99"/>
+                                        <subviews>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1K-nU-n6i">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aXH-oh-gmf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0B-sV-ER1">
+                                                            <rect key="frame" x="35" y="20" width="60" height="60"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-GL-Tdb">
+                                                            <rect key="frame" x="308" y="34" width="32" height="32"/>
+                                                            <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" image="pic_fields_albums.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-SZ-OWe">
+                                                            <rect key="frame" x="47" y="31" width="37" height="37"/>
+                                                            <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </activityIndicatorView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-gC-hjt">
+                                                            <rect key="frame" x="151" y="13" width="73" height="73"/>
+                                                            <state key="normal" image="takePicButton.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="takePhotoButtonPressed:" destination="LIj-Lj-uhP" eventType="touchUpInside" id="Y24-s7-wmR"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-On-9Bc">
+                                <rect key="frame" x="8" y="112" width="359" height="443"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="83"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yzT-5d-ew6" appends="YES" id="LkN-he-LOc"/>
+                            <outletCollection property="gestureRecognizers" destination="nkZ-Fr-EMu" appends="YES" id="2LY-IB-ipG"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="albumLabel" destination="RLV-On-9Bc" id="bNT-Rb-wBH"/>
+                        <outlet property="frameForCapture" destination="oXy-HK-yfI" id="ofN-Z0-7ZA"/>
+                        <outlet property="picUploadActivitySpinner" destination="dSL-SZ-OWe" id="Ts7-fJ-Dvq"/>
+                        <outlet property="previewImageView" destination="d0B-sV-ER1" id="4Xs-Wy-PtL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saC-1W-ZTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="yzT-5d-ew6" userLabel="Swipe Gesture Hide Menu">
+                    <connections>
+                        <action selector="swipeGestureHideMenue:" destination="LIj-Lj-uhP" id="W4Y-5r-feT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="nkZ-Fr-EMu" userLabel="Swipe Gesture Show Menu">
+                    <connections>
+                        <action selector="swipeGestureShowMenue:" destination="LIj-Lj-uhP" id="0JE-Km-fzK"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1595.5" y="487.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Welcome.png" width="750" height="1334"/>
         <image name="goButton.png" width="750" height="122"/>
         <image name="loginView.png" width="750" height="1334"/>
+        <image name="pic_fields_albums.png" width="256" height="256"/>
         <image name="sign in.png" width="630" height="110"/>
         <image name="signUpView.png" width="750" height="1334"/>
+        <image name="takePicButton.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c6F-Q4-9gd"/>
+        <segue reference="QgL-cw-cWm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,13 +10,27 @@
 
 @interface SignUpViewController ()
 
+// Properties
+@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
+
+// Actions
+- (IBAction)loginButtonPressed:(UIButton *)sender;
+- (IBAction)selectProfilePictureButtonPressed:(UIButton *)sender;
+
 @end
 
 @implementation SignUpViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.loginButton.hidden = YES;
+    
+    
     
     
 }
@@ -25,6 +39,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -36,4 +52,9 @@
 }
 */
 
+- (IBAction)loginButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)selectProfilePictureButtonPressed:(UIButton *)sender {
+}
 @end
