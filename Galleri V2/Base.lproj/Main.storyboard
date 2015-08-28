@@ -45,6 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="588.5" y="527.5"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="3zW-7f-VRo">
@@ -103,11 +104,16 @@
                                     <action selector="selectProfilePictureButtonPressed:" destination="VU2-GO-bWH" eventType="touchUpInside" id="Wsp-dd-CR6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-Qf-zRN">
+                                <rect key="frame" x="169" y="345" width="37" height="37"/>
+                                <color key="color" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="3Mi-Qf-zRN" id="3ip-I0-jj7"/>
                         <outlet property="loginButton" destination="Abt-r7-0zX" id="5ZS-yq-FQY"/>
                         <outlet property="passwordTextField" destination="B37-ic-5dJ" id="6J8-xA-8Kn"/>
                         <outlet property="profileImageView" destination="snA-SD-GmI" id="fGa-JH-zvk"/>
@@ -134,6 +140,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginView.png" translatesAutoresizingMaskIntoConstraints="NO" id="vQg-Uv-NHd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cn0-gH-OfN">
+                                <rect key="frame" x="169" y="345" width="37" height="37"/>
+                                <color key="color" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxf-8n-9Se" userLabel="Back">
                                 <rect key="frame" x="5" y="0.0" width="71" height="83"/>
                                 <state key="normal">
@@ -147,25 +157,32 @@
                                 <rect key="frame" x="30" y="235" width="321" height="30"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbM-FP-BmB" userLabel="Password Text Field">
                                 <rect key="frame" x="30" y="308" width="321" height="30"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-nz-Ch6" userLabel="Go">
                                 <rect key="frame" x="0.0" y="390" width="375" height="60"/>
                                 <state key="normal" backgroundImage="goButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="dEb-WQ-XyT" eventType="touchUpInside" id="OwT-zd-JbM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="cn0-gH-OfN" id="Sh3-Ub-SWF"/>
+                        <outlet property="loginButton" destination="g3g-nz-Ch6" id="mVw-Mx-4yf"/>
+                        <outlet property="passwordTextField" destination="bbM-FP-BmB" id="c1N-Rt-wO5"/>
+                        <outlet property="usernameTextField" destination="NCZ-v7-pVi" id="w4J-vK-8rB"/>
                         <segue destination="LIj-Lj-uhP" kind="modal" identifier="loginToCamera" id="Bjs-kx-a7V"/>
                     </connections>
                 </viewController>
@@ -195,41 +212,6 @@
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9Z-Bb-o8x" userLabel="UI">
                                         <rect key="frame" x="0.0" y="568" width="375" height="99"/>
-                                        <subviews>
-                                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1K-nU-n6i">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aXH-oh-gmf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0B-sV-ER1">
-                                                            <rect key="frame" x="35" y="20" width="60" height="60"/>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-GL-Tdb">
-                                                            <rect key="frame" x="308" y="34" width="32" height="32"/>
-                                                            <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <state key="normal" image="pic_fields_albums.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-SZ-OWe">
-                                                            <rect key="frame" x="47" y="31" width="37" height="37"/>
-                                                            <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </activityIndicatorView>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-gC-hjt">
-                                                            <rect key="frame" x="151" y="13" width="73" height="73"/>
-                                                            <state key="normal" image="takePicButton.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="takePhotoButtonPressed:" destination="LIj-Lj-uhP" eventType="touchUpInside" id="Y24-s7-wmR"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </view>
-                                                <blurEffect style="light"/>
-                                            </visualEffectView>
-                                        </subviews>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,6 +224,54 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-gC-hjt" userLabel="Capture Image Button">
+                                <rect key="frame" x="151" y="582" width="73" height="73"/>
+                                <state key="normal" image="captureImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhotoButtonPressed:" destination="LIj-Lj-uhP" eventType="touchUpInside" id="Y24-s7-wmR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0B-sV-ER1" userLabel="Image Preview">
+                                <rect key="frame" x="16" y="589" width="60" height="60"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahp-GL-Tdb" userLabel="Albums">
+                                <rect key="frame" x="327" y="603" width="32" height="32"/>
+                                <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="albumImage.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LvB-2V-moB" kind="modal" modalTransitionStyle="flipHorizontal" id="8jI-72-PdV"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-SZ-OWe">
+                                <rect key="frame" x="28" y="600" width="37" height="37"/>
+                                <color key="tintColor" red="1" green="0.47644842949999999" blue="0.30770492840000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTj-S3-PZB">
+                                <rect key="frame" x="16" y="589" width="60" height="60"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previewImageButtonPressed:" destination="LIj-Lj-uhP" eventType="touchUpInside" id="uDi-8d-9JJ"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjw-i6-HbS">
+                                <rect key="frame" x="0.0" y="-4" width="375" height="578"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Pi7-vv-ATD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tkW-dY-tgS">
+                                            <rect key="frame" x="8" y="8" width="359" height="562"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -254,6 +284,8 @@
                     <connections>
                         <outlet property="albumLabel" destination="RLV-On-9Bc" id="bNT-Rb-wBH"/>
                         <outlet property="frameForCapture" destination="oXy-HK-yfI" id="ofN-Z0-7ZA"/>
+                        <outlet property="largeImagePreviewContainerView" destination="Cjw-i6-HbS" id="zpI-4w-wjW"/>
+                        <outlet property="largeImageView" destination="tkW-dY-tgS" id="FPJ-9y-Kld"/>
                         <outlet property="picUploadActivitySpinner" destination="dSL-SZ-OWe" id="Ts7-fJ-Dvq"/>
                         <outlet property="previewImageView" destination="d0B-sV-ER1" id="4Xs-Wy-PtL"/>
                     </connections>
@@ -270,20 +302,92 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1595.5" y="487.5"/>
+            <point key="canvasLocation" x="1583.5" y="527.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mtL-mY-OnS">
+            <objects>
+                <viewController id="LvB-2V-moB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNa-TY-7RR"/>
+                        <viewControllerLayoutGuide type="bottom" id="T2s-hT-zLb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vtl-iH-cko">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="albumsView.png" translatesAutoresizingMaskIntoConstraints="NO" id="be3-YN-smz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-IL-r4A">
+                                <rect key="frame" x="113" y="106" width="52" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Albums">
+                                    <color key="titleColor" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcD-6I-0nv">
+                                <rect key="frame" x="243" y="106" width="51" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="All Pics">
+                                    <color key="titleColor" red="0.14117647059999999" green="0.72156862749999995" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picsIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5lm-hF-IT6">
+                                <rect key="frame" x="203" y="108" width="32" height="25"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="albumsIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HjK-aj-aqa">
+                                <rect key="frame" x="80" y="108" width="25" height="25"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bQ-fu-Ag6" userLabel="Back To Camera Button">
+                                <rect key="frame" x="16" y="28" width="24" height="20"/>
+                                <state key="normal" backgroundImage="cameraIcon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LIj-Lj-uhP" kind="modal" modalTransitionStyle="flipHorizontal" id="r5D-Tk-EIU"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PNh-qb-88a">
+                                <rect key="frame" x="0.0" y="153" width="375" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cKa-3C-JDL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cKa-3C-JDL" id="Pix-fP-Jsj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAc-3p-8Kc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2094.5" y="527.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Welcome.png" width="750" height="1334"/>
+        <image name="albumImage.png" width="28" height="28"/>
+        <image name="albumsIcon.png" width="28" height="28"/>
+        <image name="albumsView.png" width="750" height="1334"/>
+        <image name="cameraIcon.png" width="32" height="26"/>
+        <image name="captureImage.png" width="146" height="146"/>
         <image name="goButton.png" width="750" height="122"/>
         <image name="loginView.png" width="750" height="1334"/>
-        <image name="pic_fields_albums.png" width="256" height="256"/>
+        <image name="picsIcon.png" width="32" height="24"/>
         <image name="sign in.png" width="630" height="110"/>
         <image name="signUpView.png" width="750" height="1334"/>
-        <image name="takePicButton.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c6F-Q4-9gd"/>
-        <segue reference="QgL-cw-cWm"/>
+        <segue reference="zk8-8H-O2Z"/>
+        <segue reference="r5D-Tk-EIU"/>
     </inferredMetricsTieBreakers>
 </document>

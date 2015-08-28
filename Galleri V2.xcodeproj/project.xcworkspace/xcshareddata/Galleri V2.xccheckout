@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0BA3858C-1A46-4275-9A0A-D25084498FDB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Galleri V2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>86ADD42599124B43D623C3D1CF50B2FC7310D86C</key>
+		<string>https://github.com/mukul2934/Galleri.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Galleri V2.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>86ADD42599124B43D623C3D1CF50B2FC7310D86C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mukul2934/Galleri.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>86ADD42599124B43D623C3D1CF50B2FC7310D86C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86ADD42599124B43D623C3D1CF50B2FC7310D86C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Galleri%20V2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
