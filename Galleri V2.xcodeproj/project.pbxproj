@@ -50,6 +50,8 @@
 		1C7123F61B9010A100677551 /* picsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7123F51B9010A100677551 /* picsIcon.png */; };
 		1C7123F81B9010F800677551 /* albumsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7123F71B9010F800677551 /* albumsIcon.png */; };
 		1C7123FA1B9012B500677551 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C7123F91B9012B500677551 /* cameraIcon.png */; };
+		1C7123FE1B90D32C00677551 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7123FD1B90D32C00677551 /* AlbumsViewController.m */; };
+		1C7124021B90D93900677551 /* CustomAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7124011B90D93900677551 /* CustomAlbumTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,10 @@
 		1C7123F51B9010A100677551 /* picsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picsIcon.png; sourceTree = "<group>"; };
 		1C7123F71B9010F800677551 /* albumsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumsIcon.png; sourceTree = "<group>"; };
 		1C7123F91B9012B500677551 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		1C7123FC1B90D32C00677551 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
+		1C7123FD1B90D32C00677551 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
+		1C7124001B90D93900677551 /* CustomAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlbumTableViewCell.h; sourceTree = "<group>"; };
+		1C7124011B90D93900677551 /* CustomAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlbumTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 				1C7122FC1B8D15CF00677551 /* Login */,
 				1C7123041B8D194100677551 /* SignUp */,
 				1C7123871B8E702900677551 /* Camera View */,
+				1C7123FB1B90D31300677551 /* Albums View */,
 				1C7122EE1B8CF2D500677551 /* App Delagate */,
 				1C7122D41B8CE87600677551 /* Images.xcassets */,
 				1C7122C71B8CE87600677551 /* Supporting Files */,
@@ -310,6 +317,25 @@
 			path = "Galleri V2";
 			sourceTree = "<group>";
 		};
+		1C7123FB1B90D31300677551 /* Albums View */ = {
+			isa = PBXGroup;
+			children = (
+				1C7123FF1B90D91C00677551 /* Custom Cell */,
+				1C7123FC1B90D32C00677551 /* AlbumsViewController.h */,
+				1C7123FD1B90D32C00677551 /* AlbumsViewController.m */,
+			);
+			name = "Albums View";
+			sourceTree = "<group>";
+		};
+		1C7123FF1B90D91C00677551 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1C7124001B90D93900677551 /* CustomAlbumTableViewCell.h */,
+				1C7124011B90D93900677551 /* CustomAlbumTableViewCell.m */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,8 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7122FF1B8D15E600677551 /* LoginViewController.m in Sources */,
+				1C7123FE1B90D32C00677551 /* AlbumsViewController.m in Sources */,
 				1C7123071B8D195300677551 /* SignUpViewController.m in Sources */,
 				1C7122CD1B8CE87600677551 /* AppDelegate.m in Sources */,
+				1C7124021B90D93900677551 /* CustomAlbumTableViewCell.m in Sources */,
 				1C71238D1B8E7FDA00677551 /* CameraViewController.m in Sources */,
 				1C7122CA1B8CE87600677551 /* main.m in Sources */,
 				1C7122F21B8CF30900677551 /* WelcomeViewController.m in Sources */,

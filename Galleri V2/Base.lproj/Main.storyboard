@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="1583.5" y="527.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Albums View Controller-->
         <scene sceneID="mtL-mY-OnS">
             <objects>
-                <viewController id="LvB-2V-moB" sceneMemberID="viewController">
+                <viewController id="LvB-2V-moB" customClass="AlbumsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jNa-TY-7RR"/>
                         <viewControllerLayoutGuide type="bottom" id="T2s-hT-zLb"/>
@@ -354,14 +354,40 @@
                                 <rect key="frame" x="0.0" y="153" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cKa-3C-JDL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="cKa-3C-JDL" customClass="CustomAlbumTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cKa-3C-JDL" id="Pix-fP-Jsj">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A50-or-nus">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8m-M9-L0u">
+                                                    <rect key="frame" x="61" y="27" width="213" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# pictures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Vb-ODp">
+                                                    <rect key="frame" x="61" y="56" width="76" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumTitle" destination="b8m-M9-L0u" id="1sR-Kc-cnB"/>
+                                            <outlet property="imageView" destination="A50-or-nus" id="LG1-1o-7CH"/>
+                                            <outlet property="numberOfPictures" destination="RgW-Vb-ODp" id="9gi-Ai-fH1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LvB-2V-moB" id="0lC-bq-BYr"/>
+                                    <outlet property="delegate" destination="LvB-2V-moB" id="zDF-yw-Vhn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -100,6 +100,7 @@ AVCaptureStillImageOutput *stillImageOutput;
     [session startRunning];
 
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     self.largeImagePreviewContainerView.hidden = YES;
     self.previewImageCounter = 0;
