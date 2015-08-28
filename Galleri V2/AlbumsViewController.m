@@ -11,6 +11,16 @@
 
 @interface AlbumsViewController ()
 
+#pragma Outlets
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+#pragma Actions
+
+
+#pragma Properties
+@property (strong, nonatomic) NSMutableArray *albums;
+
+
 @end
 
 @implementation AlbumsViewController
