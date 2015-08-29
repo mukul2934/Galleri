@@ -10,7 +10,7 @@
 
 @interface CustomAlbumTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *customImageView;
 @property (strong, nonatomic) IBOutlet UILabel *albumTitle;
 @property (strong, nonatomic) IBOutlet UILabel *numberOfPictures;
 
