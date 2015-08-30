@@ -217,12 +217,36 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
+                            <view alpha="0.79999999999999982" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhC-PJ-2vG">
+                                <rect key="frame" x="-3" y="2" width="380" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBh-Ht-98U">
+                                        <rect key="frame" x="8" y="23" width="310" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-L4-I6I">
+                                        <rect key="frame" x="326" y="23" width="46" height="30"/>
+                                        <state key="normal" title="Create">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createNewAlbumButtonPressed:" destination="LIj-Lj-uhP" eventType="touchUpInside" id="1vK-RZ-DLr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-On-9Bc">
                                 <rect key="frame" x="8" y="112" width="359" height="443"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="83"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NNL-Wl-uqa" appends="YES" id="LXh-B0-c13"/>
+                                    <outletCollection property="gestureRecognizers" destination="fnL-We-kDP" appends="YES" id="Ibm-Bb-gwK"/>
+                                </connections>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-gC-hjt" userLabel="Capture Image Button">
                                 <rect key="frame" x="151" y="582" width="73" height="73"/>
@@ -260,7 +284,7 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjw-i6-HbS">
-                                <rect key="frame" x="0.0" y="-4" width="375" height="578"/>
+                                <rect key="frame" x="-3" y="247" width="375" height="578"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Pi7-vv-ATD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,6 +307,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="albumLabel" destination="RLV-On-9Bc" id="bNT-Rb-wBH"/>
+                        <outlet property="albumNameTextField" destination="LBh-Ht-98U" id="uhT-zq-3Fr"/>
+                        <outlet property="cameraMenuView" destination="ZhC-PJ-2vG" id="cDc-2G-e5b"/>
                         <outlet property="frameForCapture" destination="oXy-HK-yfI" id="ofN-Z0-7ZA"/>
                         <outlet property="largeImagePreviewContainerView" destination="Cjw-i6-HbS" id="zpI-4w-wjW"/>
                         <outlet property="largeImageView" destination="tkW-dY-tgS" id="FPJ-9y-Kld"/>
@@ -299,6 +325,16 @@
                 <swipeGestureRecognizer direction="down" id="nkZ-Fr-EMu" userLabel="Swipe Gesture Show Menu">
                     <connections>
                         <action selector="swipeGestureShowMenue:" destination="LIj-Lj-uhP" id="0JE-Km-fzK"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="NNL-Wl-uqa" userLabel="Album Back">
+                    <connections>
+                        <action selector="albumBack:" destination="LIj-Lj-uhP" id="HQF-15-nZl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="fnL-We-kDP" userLabel="Album Next">
+                    <connections>
+                        <action selector="albumNext:" destination="LIj-Lj-uhP" id="mGT-ns-gA9"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
